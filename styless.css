@@ -26,6 +26,7 @@ body {
     background-color: var(--bg-page);
     color: var(--text-primary);
     line-height: 1.4;
+    min-width: 320px;
 }
 
 img {
@@ -91,6 +92,7 @@ ul, ol {
     padding: 10px 20px;
     font-size: 14px;
     font-family: inherit;
+    min-width: 0;
 }
 
 .search-form button {
@@ -102,6 +104,7 @@ ul, ol {
     font-weight: 700;
     cursor: pointer;
     transition: background-color 0.2s ease;
+    white-space: nowrap;
 }
 
 .search-form button:hover {
@@ -121,6 +124,7 @@ ul, ol {
     display: flex;
     align-items: center;
     gap: 5px;
+    white-space: nowrap;
 }
 
 .cart-item {
@@ -144,6 +148,12 @@ ul, ol {
     font-size: 13px;
     font-weight: 600;
     overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+}
+
+.categories-list::-webkit-scrollbar {
+    display: none;
 }
 
 .categories-list a:hover {
@@ -427,4 +437,70 @@ ul, ol {
 .footer-bottom p {
     font-size: 12px;
     color: var(--text-secondary);
+}
+
+@media (max-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+        padding: 12px 15px;
+    }
+
+    .search-form {
+        max-width: 100%;
+    }
+
+    .user-actions {
+        justify-content: space-between;
+        gap: 10px;
+        font-size: 12px;
+    }
+
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .benefits-list {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .footer-columns {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .discount-badge {
+        font-size: 24px;
+        padding: 8px 16px;
+    }
+
+    .hero-text h2 {
+        font-size: 22px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .user-actions .action-item:not(.cart-item) {
+        font-size: 11px;
+    }
 }
