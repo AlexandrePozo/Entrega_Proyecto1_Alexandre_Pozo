@@ -1,4 +1,20 @@
-CSS
+:root {
+    --primary-red: #ff4747;
+    --primary-red-hover: #e03131;
+    --brand-yellow: #ffc300;
+    --dark-bg: #191919;
+    --bg-page: #f5f5f5;
+    --bg-white: #ffffff;
+    --text-primary: #222222;
+    --text-secondary: #757575;
+    --text-price: #fd384f;
+    --border-light: #e5e5e5;
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-full: 9999px;
+    --font-main: 'Open Sans', sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +22,409 @@ CSS
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f5f5;
+    font-family: var(--font-main);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    line-height: 1.4;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.main-header {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+
+.logo-main {
+    color: var(--dark-bg);
+}
+
+.logo-accent {
+    color: var(--primary-red);
+}
+
+.search-form {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    border: 2px solid var(--primary-red);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    background-color: var(--bg-white);
+}
+
+.search-form input {
+    flex: 1;
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.search-form button {
+    background-color: var(--primary-red);
+    color: var(--bg-white);
+    border: none;
+    padding: 0 25px;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-form button:hover {
+    background-color: var(--primary-red-hover);
+}
+
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.action-item {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.cart-item {
+    background-color: var(--dark-bg);
+    color: var(--bg-white);
+    padding: 8px 16px;
+    border-radius: var(--radius-full);
+}
+
+.categories-nav {
+    border-top: 1px solid var(--border-light);
+    background-color: var(--bg-white);
+}
+
+.categories-list {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    gap: 25px;
+    font-size: 13px;
+    font-weight: 600;
+    overflow-x: auto;
+}
+
+.categories-list a:hover {
+    color: var(--primary-red);
+}
+
+.hero-banner {
+    background-color: var(--brand-yellow);
+    background-image: radial-gradient(circle at 80% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 60%);
+    padding: 40px 20px;
+    margin-bottom: 25px;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.discount-badge {
+    background-color: var(--primary-red);
+    color: var(--bg-white);
+    font-size: 36px;
+    font-weight: 800;
+    padding: 15px 25px;
+    border-radius: var(--radius-md);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.hero-text h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.hero-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #444444;
+}
+
+.btn-cta {
+    display: inline-block;
+    background-color: var(--dark-bg);
+    color: var(--bg-white);
+    padding: 10px 24px;
+    border-radius: var(--radius-full);
+    font-weight: 700;
+    font-size: 14px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-cta:hover {
+    background-color: #333333;
+    transform: translateY(-2px);
+}
+
+.benefits-bar {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+}
+
+.benefits-list {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    border: 1px solid var(--border-light);
+}
+
+.benefit-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.benefit-title {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.benefit-desc {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto 50px auto;
+    padding: 0 20px;
+}
+
+.section-header {
+    display: flex;
+    align-items: baseline;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.section-header h2 {
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.countdown {
+    background-color: #fff0f0;
+    color: var(--primary-red);
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: var(--radius-sm);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.product-item {
+    background-color: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.product-image {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.tag-promo {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background-color: var(--primary-red);
+    color: var(--bg-white);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+}
+
+.product-info {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.product-title {
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 8px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: var(--text-primary);
+}
+
+.product-pricing {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 6px;
+}
+
+.price-current {
+    color: var(--text-price);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.price-original {
+    color: var(--text-secondary);
+    font-size: 12px;
+    text-decoration: line-through;
+}
+
+.product-stats {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+.btn-buy {
+    margin-top: auto;
+    text-align: center;
+    background-color: #fff2f2;
+    color: var(--primary-red);
+    padding: 8px 12px;
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 700;
+    border: 1px solid rgba(255, 71, 71, 0.2);
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-buy:hover {
+    background-color: var(--primary-red);
+    color: var(--bg-white);
+}
+
+.main-footer {
+    background-color: var(--bg-white);
+    border-top: 1px solid var(--border-light);
+    padding: 40px 20px 20px 20px;
+    margin-top: auto;
+}
+
+.footer-columns {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-col h4 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.footer-col ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-col a {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.footer-col a:hover {
+    color: var(--primary-red);
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+    text-align: center;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: var(--text-secondary);
 }
